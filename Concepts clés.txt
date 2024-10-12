@@ -1,0 +1,7 @@
+Concepts clés :
+
+Tokénisation : Découpage du texte en unités plus petites (token). Ne correspond pas forcément à un mot.
+
+Embedding : Représentation du texte sous forme de vecteurs dans l'espace.
+
+Mécanisme d'attention : Se concentre sur les parties les plus pertinentes des données d'entrée pour mettre en avant le contexte et adapter le sens des mots.

@@ -1,0 +1,1072 @@
+---
+title: "IA assistant: méthode, pratique et éthique"
+authors:
+  - name: "Hategekimana Vestin" 
+    affiliation: "Université de Genève"
+    email: "vestin.hategekimana@unige.ch"
+format: 
+  clean-revealjs:
+    transition: slide
+    logo: figure/wedata_logo.png
+    auto-animate: true
+  docx: default
+editor: visual
+---
+
+# Présentation
+
+## Qui suis-je?
+
+![](figure/pp.jpeg){width="100"}
+
+### Vestin Hategekimana
+
+-   Assistant-doctorant en démographie (IDESO)
+
+    -   Institut de démographie et de socioéconomie (UNIGE)
+
+-   Migration et Mobilité en Suisse en temps de crise
+
+-   Passionné par les sciences des données (computational social sciences)
+
+## WeData
+
+![](figure/wedata_logo.png){width="100"}
+
+> "Des stats et du code!"
+
+*Groupe étudiant ayant une passion pour le code et les statistiques: cours et contenu!*
+
+-   Notre site: <https://wedata.ch/>
+-   Notre chaîne YouTube: [WeData](https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw)
+-   Linkedin/Instagram/Facebook: @wedata_unige
+
+## Questions d'introduction
+
+-   Qui êtes-vous? (nom et activité)
+-   Votre expérience avec l'IA?
+-   Que pensez-vous de l'IA?
+-   Pourquoi avoir choisi ce cours?
+
+## Pour ce cours
+
+::: callout-note
+Pour le bon déroulement du cours, sachez que:
+
+1.  Je suis un amateur passionné
+
+2.  C'est mon premier cours dans une université populaire
+
+3.  C'est la première fois que j'enseigne le sujet
+
+4.  Ce n'est pas un cours formel
+
+5.  Vous pouvez partir à n'importe quel moment
+
+6.  Vous pouvez m'interrompre si vous avez une question
+:::
+
+## Objectifs du cours :
+
+1.  Comprendre les principes fondamentaux de l'IA, y compris les large language models (LLM).
+2.  Evaluer les questions pratiques et éthiques liées à l'IA.
+3.  Cultiver la pensée critique concernant les défis éthiques et sociaux de l'IA.
+4.  Explorer des alternatives libres et sûres pour naviguer de manière autonome dans l'IA.
+
+## Plan
+
+-   Qu'est-ce que l'intelligence artificielle (IA)?
+
+-   Histoire de l'IA
+
+-   Que sont les Large Languages Models (LLM)?
+
+-   L'engouement pour l'IA?
+
+-   Défis des Large Language Model (LLM)
+
+-   Alternatives à ChatGPT
+
+**Block: 45min/15min (3x)**
+
+---
+
+LMStudio à installer: [https://lmstudio.ai/](https://lmstudio.ai/)
+
+------------------------------------------------------------------------
+
+## Qu'est-ce que l'intelligence artificielle (IA) ? {auto-animate="true"}
+
+::: {layout-ncol="2"}
+[![](figure/chatgpt_election.PNG){width="400"}](https://www.bfmtv.com/tech/intelligence-artificielle/chat-gpt-est-aussi-utilise-pour-tenter-d-influencer-les-elections_AV-202410100528.html)
+
+[![](figure/tesla_musk_1.PNG){width="1105"}](https://www.leparisien.fr/high-tech/sans-volant-ni-pedales-a-quoi-ressemble-le-robotaxi-de-tesla-presente-par-musk-11-10-2024-5HC7HOVIAJGALBQBZMINTVLG6U.php)
+
+[![](figure/prix_nobel_physique.PNG){width="1575"}](https://www.francetvinfo.fr/internet/intelligence-artificielle/prix-nobel-de-physique-nous-n-avons-jamais-cotoye-quelque-chose-de-plus-intelligent-que-nous-s-inquiete-le-laureat-geoffrey-hinton_6827603.html)
+
+[![](figure/ia_remplacement.PNG){width="838"}](https://www.lebigdata.fr/enquete-ia-impact-emploi)
+:::
+
+## Qu'est-ce que l'intelligence artificielle (IA) ? {auto-animate="true"}
+
+-   **Définition simple** : L'IA est un modèle informatique ayant pour but **d'imiter l'intelligence humaine**.
+-   Il existe différents types d'IA, allant de **l'IA étroite** (spécialisée dans une tâche spécifique) à **l'IA générale** (capable d'effectuer n'importe quelle tâche intellectuelle humaine), bien que cette dernière reste encore théorique.
+
+[![](figure/brain_ai.jpg){fig-align="center" width="450"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fincubator.ucf.edu%2Fwhat-is-artificial-intelligence-ai-and-why-people-should-learn-about-it%2F&psig=AOvVaw3esR4J2xLdtEc3Ngn-TxqW&ust=1728757950712000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCOjrrbP7hokDFQAAAAAdAAAAABAE)
+
+------------------------------------------------------------------------
+
+## Top des companies dans l'IA generative
+
+1.  **OpenAI** : ChatGPT (GPT-3.5, GPT-4, GPT-4o, o1), Dall-E, Sora
+2.  **Google** : PaLM, Bard, Gemini
+3.  **Meta** : Llama (2, 3, 3.1), codeLlama
+4.  **Anthropic** : Claude (2, 3 haiku, 3 sonnet, 3 opus, 3.5 sonnet)
+5.  **Microsoft** : Bing AI, Copilot, GitHub Copilot
+
+[![](figure/ai_leadin_company.png){fig-align="center" width="599"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thinkers360.com%2F50-thought-leading-companies-on-artificial-intelligence-2023%2F&psig=AOvVaw2cerBJcmJB3GxVpoZTPF38&ust=1728758206562000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMiOnq78hokDFQAAAAAdAAAAABAE)
+
+------------------------------------------------------------------------
+
+## Aperçu de l'écosystème de l'IA
+
+### L'IA : un vaste champ d'application
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+<style>
+  </style>
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> <-- IA rectangle --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> <-- Machine Learning rectnagle --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7"> <rect rx="25" ry="25" x="189" y="152" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="258" height="258" style="fill:#549df3;fill-opacity:1"> </rect> </g> </g> <-- Deep Learning rectnagle --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6"> <rect rx="25" ry="25" x="217.00000000000003" y="180" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="229.99999999999994" height="230" style="fill:#48f9f9;fill-opacity:1"> </rect> </g> </g> <-- IA générative rectangle --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6aea98cc51" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6aea98cc51"> <rect rx="25" ry="25" x="244" y="206" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="203" height="203" style="fill:#f9f748;fill-opacity:1"> </rect> </g> </g> <-- IA label --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> <-- Machine learning label --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b6785ee98" data-testid="Machine Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="200" y="156" width="157" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="200" y="156" width="156.00997924804688" height="27.519996643066406" id="fill-0-render-39-0"> <g> <rect width="156.00997924804688" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b6785ee98"> <text x="200" y="181.59999668598175" dominant-baseline="ideographic" textLength="156.00997924804688" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Machine Learning</text> </g> </g> </g> <-- Deep learning label --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b78567d4a" data-testid="Deep Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="230" y="184" width="127" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="230" y="184" width="126.89998626708984" height="27.519996643066406" id="fill-0-render-40-0"> <g> <rect width="126.89998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b78567d4a"> <text x="230" y="209.59999668598175" dominant-baseline="ideographic" textLength="126.89998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Deep Learning</text> </g> </g> </g> <-- générative IA label --> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79" data-testid="IA Générative"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="259" y="212" width="119" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="259" y="212" width="118.39998626708984" height="27.519996643066406" id="fill-0-render-41-0"> <g> <rect width="118.39998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79"> <text x="259" y="237.59999668598175" dominant-baseline="ideographic" textLength="118.39998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">IA Générative</text> </g> </g> </g> </g>
+
+</svg>
+```
+
+:::
+
+::: {.column width="50%"}
+-   L'intelligence artificielle (IA) est le domaine général de la création de machines capables d'effectuer des tâches qui requièrent généralement l'intelligence humaine.
+-   L'IA comporte plusieurs sous-domaines, dont **l'apprentissage machine (Machine Learning ou ML)** et **l'apprentissage profond (Deep Learning ou DL)**.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## L'écosystème de l'IA : Composants clés {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+
+<style>
+  </style>
+
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> \<-- IA rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> \<-- IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> </g>
+
+</svg>
+```
+
+:::
+
+::: {.column width="50%"}
+1.  **Intelligence artificielle (IA)** : Le vaste domaine qui englobe toutes les capacités des "machines intelligentes".
+    -   Tâches : Résolution de problèmes, perception, prise de décision.
+:::
+:::::
+
+## L'écosystème de l'IA : Composants clés {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+
+<style>
+  </style>
+
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> \<-- IA rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> \<-- Machine Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7"> <rect rx="25" ry="25" x="189" y="152" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="258" height="258" style="fill:#549df3;fill-opacity:1"> </rect> </g> </g> \<-- IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> \<-- Machine learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b6785ee98" data-testid="Machine Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="200" y="156" width="157" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="200" y="156" width="156.00997924804688" height="27.519996643066406" id="fill-0-render-39-0"> <g> <rect width="156.00997924804688" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b6785ee98"> <text x="200" y="181.59999668598175" dominant-baseline="ideographic" textLength="156.00997924804688" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Machine Learning</text> </g> </g> </g> </g>
+
+</svg>
+```
+
+:::
+
+::: {.column width="50%"}
+2.  **Apprentissage machine (ML)** : Sous-domaine de l'IA dans lequel les machines apprennent à partir de [données]{.underline} et améliorent leurs performances au fil du temps.
+    -   Exemple : Filtres anti-spam, prédiction financière ou actuarielle
+
+[![](figure/ml_rule.png){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2F0liverFlow%2FHandwritingRecognition&psig=AOvVaw1NLm_iyJfurBj9aIBcJ0v3&ust=1728758701700000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCKC44aH-hokDFQAAAAAdAAAAABAE)
+:::
+:::::
+
+## L'écosystème de l'IA : Composants clés {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+
+<style>
+  </style>
+
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> \<-- IA rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> \<-- Machine Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7"> <rect rx="25" ry="25" x="189" y="152" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="258" height="258" style="fill:#549df3;fill-opacity:1"> </rect> </g> </g> \<-- Deep Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6"> <rect rx="25" ry="25" x="217.00000000000003" y="180" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="229.99999999999994" height="230" style="fill:#48f9f9;fill-opacity:1"> </rect> </g> </g> \<-- IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> \<-- Machine learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b6785ee98" data-testid="Machine Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="200" y="156" width="157" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="200" y="156" width="156.00997924804688" height="27.519996643066406" id="fill-0-render-39-0"> <g> <rect width="156.00997924804688" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b6785ee98"> <text x="200" y="181.59999668598175" dominant-baseline="ideographic" textLength="156.00997924804688" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Machine Learning</text> </g> </g> </g> \<-- Deep learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b78567d4a" data-testid="Deep Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="230" y="184" width="127" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="230" y="184" width="126.89998626708984" height="27.519996643066406" id="fill-0-render-40-0"> <g> <rect width="126.89998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b78567d4a"> <text x="230" y="209.59999668598175" dominant-baseline="ideographic" textLength="126.89998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Deep Learning</text> </g> </g> </g> </g>
+
+</svg>
+```
+:::
+
+::: {.column width="50%"}
+3.  **Apprentissage en profondeur (DL)** : Un sous-ensemble spécialisé de l'intelligence artificielle utilisant des [réseaux neuronaux]{.underline} avec de nombreuses couches pour traiter des données complexes.
+    -   Exemple : systèmes de reconnaissance d'images
+
+[![](figure/multilayer_neural_network.png){fig-align="center" width="318"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fartificial-neural-networks-and-its-applications%2F&psig=AOvVaw1-I58z59oKvtqSGWz_5B6H&ust=1728758990750000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMiAiKD_hokDFQAAAAAdAAAAABAE)
+:::
+:::::
+
+## L'écosystème de l'IA : Composants clés {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+
+<style>
+  </style>
+
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> \<-- IA rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> \<-- Machine Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7"> <rect rx="25" ry="25" x="189" y="152" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="258" height="258" style="fill:#549df3;fill-opacity:1"> </rect> </g> </g> \<-- Deep Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6"> <rect rx="25" ry="25" x="217.00000000000003" y="180" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="229.99999999999994" height="230" style="fill:#48f9f9;fill-opacity:1"> </rect> </g> </g> \<-- IA générative rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6aea98cc51" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6aea98cc51"> <rect rx="25" ry="25" x="244" y="206" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="203" height="203" style="fill:#f9f748;fill-opacity:1"> </rect> </g> </g> \<-- IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> \<-- Machine learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b6785ee98" data-testid="Machine Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="200" y="156" width="157" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="200" y="156" width="156.00997924804688" height="27.519996643066406" id="fill-0-render-39-0"> <g> <rect width="156.00997924804688" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b6785ee98"> <text x="200" y="181.59999668598175" dominant-baseline="ideographic" textLength="156.00997924804688" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Machine Learning</text> </g> </g> </g> \<-- Deep learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b78567d4a" data-testid="Deep Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="230" y="184" width="127" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="230" y="184" width="126.89998626708984" height="27.519996643066406" id="fill-0-render-40-0"> <g> <rect width="126.89998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b78567d4a"> <text x="230" y="209.59999668598175" dominant-baseline="ideographic" textLength="126.89998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Deep Learning</text> </g> </g> </g> \<-- générative IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79" data-testid="IA Générative"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="259" y="212" width="119" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="259" y="212" width="118.39998626708984" height="27.519996643066406" id="fill-0-render-41-0"> <g> <rect width="118.39998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79"> <text x="259" y="237.59999668598175" dominant-baseline="ideographic" textLength="118.39998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">IA Générative</text> </g> </g> </g> </g>
+
+</svg>
+```
+
+:::
+
+::: {.column width="50%"}
+4.  **Intelligence artificielle générative (Gen AI** ou **GAI) :** Les systèmes d'intelligence artificielle capables de [créer un contenu]{.underline} original tel que [du texte]{.underline}, [des images]{.underline}, [du son]{.underline}, [de la vidéo]{.underline} ou [du code]{.underline} en réponse à des invites ou à des demandes.
+    -   Exemple : Dall-E (image), Sora (Vidéo) ou ChatGPT (Texte)
+:::
+:::::
+
+## L'écosystème de l'IA : Composants clés {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+```{=html}
+<svg width="500" xmlns="http://www.w3.org/2000/svg" height="500" id="screenshot-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" viewBox="162 124 285 286" style="-webkit-print-color-adjust::exact" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1">
+
+<style>
+  </style>
+
+<g id="shape-ab84bb9a-2f00-80b7-8005-1a6e26dd9d28" data-testid="Group" rx="0" ry="0"> \<-- IA rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a72f05a74" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a72f05a74"> <rect rx="25" ry="25" x="162" y="124" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="285" height="285" style="fill:#f354cb;fill-opacity:1"> </rect> </g> </g> \<-- Machine Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6a9b88e6a7"> <rect rx="25" ry="25" x="189" y="152" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="258" height="258" style="fill:#549df3;fill-opacity:1"> </rect> </g> </g> \<-- Deep Learning rectnagle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6ab3ff09f6"> <rect rx="25" ry="25" x="217.00000000000003" y="180" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="229.99999999999994" height="230" style="fill:#48f9f9;fill-opacity:1"> </rect> </g> </g> \<-- IA générative rectangle --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6aea98cc51" data-testid="Rectangle"> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6aea98cc51"> <rect rx="25" ry="25" x="244" y="206" transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" width="203" height="203" style="fill:#f9f748;fill-opacity:1"> </rect> </g> </g> \<-- IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd" data-testid="Intelligence Artificielle"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="180" y="128" width="200" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="180" y="128" width="199.5" height="27.519996643066406" id="fill-0-render-38-0"> <g> <rect width="199.5" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b1b744cdd"> <text x="180" y="153.59999668598175" dominant-baseline="ideographic" textLength="199.5" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Intelligence Artificielle</text> </g> </g> </g> \<-- Machine learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b6785ee98" data-testid="Machine Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="200" y="156" width="157" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="200" y="156" width="156.00997924804688" height="27.519996643066406" id="fill-0-render-39-0"> <g> <rect width="156.00997924804688" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b6785ee98"> <text x="200" y="181.59999668598175" dominant-baseline="ideographic" textLength="156.00997924804688" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Machine Learning</text> </g> </g> </g> \<-- Deep learning label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b78567d4a" data-testid="Deep Learning"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="230" y="184" width="127" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="230" y="184" width="126.89998626708984" height="27.519996643066406" id="fill-0-render-40-0"> <g> <rect width="126.89998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b78567d4a"> <text x="230" y="209.59999668598175" dominant-baseline="ideographic" textLength="126.89998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">Deep Learning</text> </g> </g> </g> \<-- générative IA label --\> <g id="shape-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79" data-testid="IA Générative"> <g transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)" class="text-container" x="259" y="212" width="119" height="24" rx="0" ry="0"> <defs> <pattern patternUnits="userSpaceOnUse" x="259" y="212" width="118.39998626708984" height="27.519996643066406" id="fill-0-render-41-0"> <g> <rect width="118.39998626708984" height="27.519996643066406" style="fill:#000000;fill-opacity:1"> </rect> </g> </pattern> </defs> <g class="fills" id="fills-ab84bb9a-2f00-80b7-8005-1a6b98a4ed79"> <text x="259" y="237.59999668598175" dominant-baseline="ideographic" textLength="118.39998626708984" lengthAdjust="spacingAndGlyphs" style="text-transform:none;font-family:sourcesanspro;letter-spacing:normal;font-style:normal;font-weight:700;white-space:pre;font-size:20px;text-decoration:none solid rgb(0, 0, 0);direction:ltr;fill:#000000;fill-opacity:1">IA Générative</text> </g> </g> </g> </g>
+
+</svg>
+```
+
+:::
+
+::: {.column width="50%"}
+5.  **Large language model (LLM)** : Un sous-domaine de l'IA génératieve axé sur les tâches liées au [langage naturel (texte)]{.underline}.
+    -   Tâches: [Résumé]{.underline}, [production]{.underline}, [classification]{.underline}, [traduction]{.underline} et [correction]{.underline} de texte
+    -   Exemple : Modèles GPT comme ChatGPT.
+
+[![](figure/chatgpt.png){fig-align="center" width="125"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmetricool.com%2Fchatgpt%2F&psig=AOvVaw10vd1jOvzY2EpSNsZIgFWI&ust=1728759274327000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCPiMt6aAh4kDFQAAAAAdAAAAABAE)
+:::
+:::::
+
+# Histoire de l'IA
+
+## Développement historique de l'IA (1940-2000)
+
+::::: columns
+::: {.column width="50%"}
+[![Perceptron](figure/perceptron_neuron.png)](https://towardsdatascience.com/the-concept-of-artificial-neurons-perceptrons-in-neural-networks-fab22249cbfc)
+
+[![Test de Turing](figure/turing_test_diagram.png){width="262"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Ffr.wikipedia.org%2Fwiki%2FTest_de_Turing&psig=AOvVaw0aEovT-uAKS9q2L1Q65hV5&ust=1728759603264000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCIjKpMeBh4kDFQAAAAAdAAAAABAJ)
+:::
+
+::: {.column width="50%"}
+### 1940 : Les premiers jours
+
+-   **1943** : Premier concept de [réseaux neuronaux artificiels]{.underline} par Warren McCulloch et Walter Pitts.
+-   **1950** : Alan Turing propose le ["test de Turing"]{.underline} pour l'intelligence des machines.
+
+### 1956 : Naissance de l'IA
+
+-   **Conférence de Dartmouth** : Considérée comme la naissance officielle de [l'IA en tant que domaine]{.underline}, avec des efforts pour développer des machines intelligentes.
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Les grandes étapes de l'IA (1940-2000) {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+[![](figure/ELIZA_conversation.png)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FELIZA&psig=AOvVaw24C_BnYJEJXkswzXF_M4Ju&ust=1728760061426000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCOielJ6Dh4kDFQAAAAAdAAAAABAE)
+:::
+
+::: {.column width="50%"}
+### 1960-1970 : Premières recherches et limites
+
+-   **1966** : [ELIZA]{.underline}, un des premiers programmes de [traitement du langage naturel]{.underline} (NLP), est créé.
+-   **1970 -** : La recherche sur l'IA se heurte à un [obstacle]{.underline} en raison de la [limitation de la puissance de calcul]{.underline} et de la [disponibilité des données]{.underline}.
+:::
+:::::
+
+## Les grandes étapes de l'IA (1940-2000) {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+[![](figure/prolog.png){width="301"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fgithub.com%2Fseanpm2001%2FLearn-Prolog&psig=AOvVaw2m2kcRBV46RnNlCZNQkdHF&ust=1728760539051000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCKjwrICFh4kDFQAAAAAdAAAAABAE)
+
+[![](figure/prolog_code.jpg)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fnicolettebourlas18.wordpress.com%2F2016%2F03%2F07%2Fprolog-and-recursion%2F&psig=AOvVaw0oUNi-O99FXK_uO7f0Maya&ust=1728760016155000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCJC1u72Eh4kDFQAAAAAdAAAAABAE)
+:::
+
+::: {.column width="50%"}
+### 1980 : Essor des systèmes experts
+
+-   Le développement de l'IA s'oriente vers des **systèmes basés sur des règles**, permettant aux machines d'imiter la prise de décision humaine pour des tâches spécifiques.
+:::
+:::::
+
+## Les grandes étapes de l'IA (1940-2000) {auto-animate="true"}
+
+::::: columns
+::: {.column width="50%"}
+[![](figure/geoffrey_hilton.jpg){fig-align="center" width="195"}](https://fr.wikipedia.org/wiki/Geoffrey_Hinton)
+
+[![](figure/multilayer_neural_network.png)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fartificial-neural-networks-and-its-applications%2F&psig=AOvVaw1-I58z59oKvtqSGWz_5B6H&ust=1728758990750000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMiAiKD_hokDFQAAAAAdAAAAABAE)
+:::
+
+::: {.column width="50%"}
+### 1980 : Essor des systèmes experts
+
+-   **1986**: [Geoffrey Hinton]{.underline} a popularisé l'algorithme de [rétropropagation (backpropagation)]{.underline} pour l'apprentissage des [réseaux neuronaux multicouches]{.underline}. Il a récemment reçu le [prix noble de physique]{.underline} pour cette contribution dans l'IA (09.10.2024)
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## Développement de l'IA (2000-2017) {auto-animate="true"}
+
+::::: columns
+::: {.column width="40%"}
+[![Processeur graphique ou Graphics Processing Unit (GPU)](figure/what-is-a-gpu.jpg){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hellotech.com%2Fblog%2Fwhats-a-gpu-what-gpu-do-you-have&psig=AOvVaw1OmjfaWm6J5Ty9W817hVF7&ust=1728761310560000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCICQ0omIh4kDFQAAAAAdAAAAABAJ)
+:::
+
+::: {.column width="60%"}
+### 2000 : L'ère de l'apprentissage automatique
+
+-   **2006** : L'essor du **Machine Learning (ML)**, grâce aux [puissants GPU]{.underline} et à la disponibilité de [grands ensembles de données]{.underline} (par exemple, Common Crawl).
+:::
+:::::
+
+## Développement de l'IA (2000-2017) {auto-animate="true"}
+
+::::: columns
+::: {.column width="40%"}
+[![](figure/rnn-lstm-gru-transformers.png){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Faiml.com%2Fcompare-the-different-sequence-models-rnn-lstm-gru-and-transformers%2F&psig=AOvVaw0UruiqZ0-9StarYRJIDwpt&ust=1728761437411000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCMjWhbSIh4kDFQAAAAAdAAAAABAK)
+:::
+
+::: {.column width="60%"}
+### 2000 : L'ère de l'apprentissage automatique
+
+-   **2007** : Les réseaux de mémoire à long terme (**LSTM**) améliorent la [génération de texte]{.underline} et la [traduction]{.underline}.
+:::
+:::::
+
+## Développement de l'IA (2000-2017) {auto-animate="true"}
+
+::::: columns
+::: {.column width="40%"}
+[![](figure/transformer.png){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hellotech.com%2Fblog%2Fwhats-a-gpu-what-gpu-do-you-have&psig=AOvVaw1OmjfaWm6J5Ty9W817hVF7&ust=1728761310560000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCICQ0omIh4kDFQAAAAAdAAAAABAJ)
+:::
+
+::: {.column width="60%"}
+### 2010 : La révolution de l'apprentissage profond
+
+-   **2012** : Les percées en matière d'apprentissage profond permettent à l'IA de progresser dans la [reconnaissance des images]{.underline} et de la [parole]{.underline}.
+-   **2017** : L'introduction du modèle **Transformer**, qui devient la base des large language model (LLM).
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## L'IA moderne et les LLM (2018-maintenant) {auto-animate="true"}
+
+::::: columns
+::: {.column width="40%"}
+[![](figure/12-attention-is-all-you-need.png){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fbea.stollnitz.com%2Fblog%2Fgpt-transformer%2F&psig=AOvVaw267I5aG5sYTVuGCalxHqww&ust=1728761646813000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCNjZ45qJh4kDFQAAAAAdAAAAABAJ)
+:::
+
+::: {.column width="60%"}
+-   **2018** : L'introduction du **GPT-1** marque le début des large language models [basés sur les transformers]{.underline}.
+-   **2019** : **GPT-2** élargit l'échelle, suivi par **GPT-3** en 2020 avec 175 milliards de paramètres.
+-   **2023** : Les LLM tels que **GPT-4** démontrent des capacités incroyables, allant de l'écriture de code à l'exécution de tâches créatives.
+-   **2024**: De récent progrès ont été fait du côté de GPT-4o et de o1 qui sont des modèles qui apportent des nouveautés ([multimodal]{.underline}).
+:::
+:::::
+
+## L'IA moderne et les LLM (2018-maintenant) {auto-animate="true"}
+
+::::: columns
+::: {.column width="40%"}
+[![GPT: Generative pre-trained transformer. Augmentation du nombre de paramètres et de données](figure/gpt_family.png)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fnewsletter.theaiedge.io%2Fp%2Fthe-chatgpt-models-family&psig=AOvVaw2h1GwjvxiFegjLs5zbEtvu&ust=1728761723140000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCLCTj7aJh4kDFQAAAAAdAAAAABAE)
+:::
+
+::: {.column width="60%"}
+-   **2018** : L'introduction du **GPT-1** marque le début des large language model [basés sur les transformers]{.underline}.
+-   **2019** : **GPT-2** élargit l'échelle, suivi par **GPT-3** en 2020 avec 175 milliards de paramètres.
+-   **2023** : Les LLM tels que **GPT-4** démontrent des capacités incroyables, allant de l'écriture de code à l'exécution de tâches créatives.
+-   **2024**: De récent progrès ont été fait du côté de GPT-4o et de o1 qui sont des modèles qui apportent des nouveautés ([multimodal]{.underline}).
+:::
+:::::
+
+## L'IA dans la vision et l'audio : Vue d'ensemble
+
+-   Alors que le traitement du langage naturel (NLP) et les LLM se concentrent sur le texte, l'IA a également fait des progrès significatifs dans le traitement de la **vision** et de l'**audio**.
+-   Ces progrès permettent aux machines de voir, d'interpréter des images, de reconnaître des modèles et de comprendre les sons et la parole.
+
+------------------------------------------------------------------------
+
+## Histoire de l'IA de la vision {.scrollable}
+
+### 1960-1980 : Premiers développements
+
+-   **1966** : Le "Summer Vision Project" de Marvin Minsky au MIT vise à créer un système visuel capable de comprendre les images du monde réel.
+-   **1970s** : Développement d'algorithmes de **détection des contours** pour identifier les limites dans les images.
+
+### 1990s : Progrès de la reconnaissance d'images
+
+-   **1990s** : Reconnaissance de chiffres manuscrits à l'aide de réseaux neuronaux (par exemple, le modèle **LeNet** de Yann LeCun).
+-   **1998** : Le développement de l'ensemble de données **MNIST** pour la classification des chiffres manuscrits est devenu une référence pour l'IA de la vision.
+
+### 2010s : La révolution de l'apprentissage profond dans le domaine de la vision
+
+-   **2012** : **AlexNet** remporte la compétition ImageNet, démontrant la puissance des **réseaux neuronaux conversationnels (CNN)** pour la classification d'images.
+-   **2015** : **ResNet**, une architecture CNN plus profonde, surpasse les performances humaines dans les tâches de classification d'images.
+
+### Vision moderne de l'IA :
+
+-   **Détection d'objets** : Des modèles comme **YOLO** (You Only Look Once) détectent plusieurs objets en temps réel.
+-   **IA générative** : Les modèles basés sur la vision, tels que les **GAN (Generative Adversarial Networks)**, créent des images réalistes à partir de zéro.
+
+------------------------------------------------------------------------
+
+## Histoire de l'IA audio {.scrollable}
+
+### Années 1950-1980 : Début de la reconnaissance vocale
+
+-   **1952** : Le premier système de reconnaissance vocale, **Audrey**, développé par Bell Labs, pouvait reconnaître des chiffres prononcés.
+-   **1960s** : **Harpy**, développé par l'Université Carnegie Mellon, pouvait reconnaître plus de 1 000 mots.
+
+### 1980s : L'essor des méthodes statistiques
+
+-   **1980s** : **Les modèles de Markov cachés (HMM)** deviennent populaires pour la reconnaissance vocale, améliorant considérablement la précision.
+-   **1987** : Création de **SPHINX**, le premier système de reconnaissance vocale en continu à CMU.
+
+### 2000s : Apprentissage profond en audio
+
+-   **2000s** : Introduction des **réseaux neuronaux récurrents (RNN)** et des **mémoires longues à court terme (LSTM)** pour le traitement des données audio séquentielles.
+-   **2012** : **DeepSpeech**, un moteur de reconnaissance vocale utilisant l'apprentissage profond, est introduit par Baidu.
+
+### Avancées récentes :
+
+-   **2018** : L'utilisation de **WaveNet**, un modèle génératif pour l'audio brut, est très prometteuse pour produire une parole semblable à celle d'un être humain.
+-   **Assistants vocaux** : Les assistants virtuels pilotés par l'IA comme **Siri**, **Alexa** et **Google Assistant** s'appuient sur des technologies avancées de reconnaissance vocale et de traitement audio.
+
+------------------------------------------------------------------------
+
+## Applications clés de l'IA de la vision et de l'audio
+
+### IA de la vision :
+
+-   **Imagerie médicale** : Les modèles d'IA sont utilisés pour analyser les [radiographies]{.underline}, les [IRM]{.underline} et d'autres images médicales à des fins de diagnostic.
+-   **Véhicules autonomes** : Les systèmes de vision permettent aux [voitures autonomes]{.underline} de reconnaître les obstacles et de naviguer.
+
+### IA de l'Audio :
+
+-   **Assistants vocaux** : Systèmes pilotés par l'IA comme [Alexa]{.underline} et [Google Assistant]{.underline} qui comprennent et traitent les commandes vocales.
+-   **Génération de musique** : Des modèles d'IA comme le **Jukebox** d'OpenAI [créent de la musique]{.underline} en fonction des entrées de l'utilisateur.
+
+------------------------------------------------------------------------
+
+## L'avenir de l'IA de la vision et de l'audio
+
+-   **L'IA de la vision** : On s'attend à ce qu'elle joue un rôle essentiel dans la **robotique**, la **surveillance** et la **réalité augmentée**.
+-   **Audio AI** : Les progrès de la **synthèse vocale** et de la **réalité virtuelle audio** repousseront les limites de l'interaction homme-machine.
+
+[![Computer vision](figure/computer_vision.png){fig-align="center"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Feverything-you-ever-wanted-to-know-about-computer-vision-heres-a-look-why-it-s-so-awesome-e8a58dfb641e&psig=AOvVaw2XyT9c28Mzw8nB93qYB_0s&ust=1728762674737000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCNiCm4aNh4kDFQAAAAAdAAAAABAK)
+
+# Que sont les Large Language Models (LLM)?
+
+## Que sont les large language models (LLM) ?
+
+-   Les **LLM** sont un type d'intelligence artificielle (IA) capable de [comprendre]{.underline} et de [générer du texte]{.underline}.
+-   Ils permettent à des outils comme ChatGPT de créer des réponses, de compléter des phrases et même de tenir des conversations.
+
+### Comment les LLMs génèrent du texte ? :
+
+1.  Les LLM [prédisent la suite d'une phrase]{.underline}.
+2.  Ils sont formés en utilisant de vastes [quantités de données]{.underline} textuelles provenant de livres, de sites Web, etc.
+3.  Ils fonctionnent en [générant un mot à la fois]{.underline}, sur la base des mots précédents.
+
+## Comment fonctionnent les LLM?
+
+Les LLM sont basés sur le modèle de **transformer**, qui se compose de :
+
+-   **Encoder** : [Apprend]{.underline} à partir du texte d'entrée.
+
+-   **Décodeur** : [Prédit]{.underline} le mot suivant en utilisant les données encodées.
+
+**Création du premier GPT** (**Generative Pre-trained Transformer)**
+
+-   Ces modèles **transformer** servaient [de base à la traduction]{.underline} mais ont vu leur usage s'élargir à la génération de texte
+
+-   Au lieu de leur donner un texte d'une langue A à traduire dans la langue B, on utilise uniquement le **décodeur** pour [prédire le prochain mot]{.underline}
+
+## Comment un LLM apprend-il ?
+
+En tant que modèle de machine learning, le modèle a besoin d'apprendre en premier lieu.
+
+**1 - Phase d'entraînement** (avant la sortie du modèle) :
+
+-   Le modèle lit et analyse de [grandes quantités de texte]{.underline}.
+-   Il apprend des données [la façon dont les mots sont utilisés ensemble]{.underline}, tout comme les humains apprennent en lisant des livres ou en écoutant des conversations.
+
+![](figure/ml_rule.png){fig-align="center"}
+
+------------------------------------------------------------------------
+
+**2 - Phase d'annotation/censure**:
+
+-   Comme les [données]{.underline} stockées ne sont [pas filtrées]{.underline}, il y a du [contenu problématique]{.underline} ou qui sont tout simplement [inacceptable]{.underline}.
+-   Pour éviter que le modèle ne produise quoi que ce soit, nous avons besoin [d'humains pour valider les réponses et guider le modèle]{.underline}.
+
+[![](figure/human_feedback.jpg){fig-align="center" width="479"}](https://time.com/6247678/openai-chatgpt-kenya-workers/)
+
+------------------------------------------------------------------------
+
+**3 - Phase de prédiction** (après l’entraînement) :
+
+-   Après l'entraînement, le modèle [prédit le mot suivant]{.underline} dans une phrase [en se basant sur les mots qui le précèdent]{.underline}.
+
+[![](gif/word_prediction.gif){fig-align="center" width="800"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## Comment les LLM génèrent-ils du texte ?
+
+### Exemple : Rédaction d'une histoire
+
+1.  **Entrée** : L'utilisateur commence par une phrase : "Il était une fois..."
+2.  **Prédiction** : Le LLM prédit le mot suivant dans l'histoire en [choisissant le mot le plus probable]{.underline} sur la base de ce qu'il a appris.
+3.  **Répétition** : Il continue à prédire et à ajouter des mots jusqu'à ce que l'histoire soit complète.
+
+[![](gif/word_prediction.gif){fig-align="center" width="533"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## La tokenisation : Découpage du texte en morceaux
+
+-   Les LLM ne traitent pas des phrases entières en une seule fois. Au lieu de cela, ils [décomposent le texte en plus petits morceaux]{.underline} appelés **tokens**.
+-   Les tokens peuvent être: des mots entiers, [des parties de mots]{.underline} ou des signes de ponctuation
+
+[![](gif/tokens.gif){fig-align="center" width="621"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## Embedding : Comprendre le sens des nombres
+
+-   Chaque mot est converti en **vecteur**, qui est une [liste de nombres représentant la signification du mot]{.underline}.
+-   Les mots ayant des [significations similaires]{.underline} (par exemple, "chat" et "chien") auront des [vecteurs proches]{.underline} les uns des autres dans cet espace.
+-   Ces vecteurs aident le LLM à comprendre le [contexte]{.underline} et la [relation entre les mots]{.underline}.
+
+[![](gif/embedding.gif){fig-align="center" width="533"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## Attention : Comment les LLM comprennent le contexte
+
+-   L'**attention** est le mécanisme clé qui aide les LLM à [se concentrer sur les mots importants]{.underline} d'une phrase.
+-   Par exemple, dans la phrase "Le chat s'est assis sur le tapis", l'attention aide le modèle à savoir que "chat" et "assis" sont liés.
+-   Cela permet au modèle de générer un texte [plus précis]{.underline} et [plus pertinent]{.underline}.
+
+[![](gif/embedding_attention.gif){fig-align="center"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## Comment un LLM utilise-t-il l'attention ?
+
+1.  Il examine tous les [tokens]{.underline} d'une phrase.
+2.  Il décide quels mots sont les [plus importants]{.underline} pour prédire le mot suivant.
+3.  Il [actualise sa compréhension]{.underline} de chaque mot en fonction du [contexte]{.underline} des autres mots.
+
+[![](gif/weight_update.gif){fig-align="center"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+------------------------------------------------------------------------
+
+## Le résultat final : Choix du mot suivant
+
+-   Après avoir traité les tokens et appliqué l'attention, le LLM produit une [liste de mots suivants possibles]{.underline}, chacun avec une [probabilité]{.underline}.
+-   [Le mot ayant la probabilité la plus élevée est choisi]{.underline}, et ce processus se répète pour générer plus de texte.
+
+[![](gif/word_prediction_2.gif){fig-align="center" width="799"}](https://www.youtube.com/watch?v=wjZofJX0v4M)
+
+## Pourquoi les LLM sont-ils si puissants ?
+
+1.  **Échelle** : Les LLM comme le GPT-3 ont été entraînés sur de [grandes quantités de texte]{.underline} (livre, forums, internet, etc.), ce qui leur donne une [compréhension]{.underline} profonde du langage.
+2.  **Adaptabilité** : Ils peuvent gérer une [grande variété de tâches]{.underline}, en partant de la réponse à des questions jusqu'à la rédaction d'histoires ou le codage.
+3.  **Créativité** : En prédisant un mot à la fois, les LLM peuvent générer des réponses [étonnamment cohérentes et créatives]{.underline}.
+
+------------------------------------------------------------------------
+
+## Applications des LLM
+
+Les LLM sont utilisés dans différents domaines :
+
+-   **Chatbots** et assistants virtuels (ChatGPT, OpenAI; Copilot, Microsoft; Gemini, Google)
+
+-   **Assistance au code** (GitHub copilot, Microsoft)
+
+-   etc.
+
+### Perspectives actuel :
+
+-   **Modèles multimodaux** : Combinaison de texte, d'images, d'audio, de vidéo (GPT4o)
+-   **Amélioration du raisonnement** : Travailler sur des modèles qui "pensent" plus logiquement (o1)
+
+## Limites des LLM
+
+-   **Coûts** : Ces modèles ont besoin d'une [grande puissance de calcule]{.underline} pour les entraîner et les utiliser. Seules [des grandes entreprises]{.underline} peuvent se lancer dans leur création.
+
+    -   Cependant, il existe des projets [open-source]{.underline} et [locaux]{.underline} mais qui ne sont pas aussi puissants que des modèles comme ChatGPT ou Claud (Llama, Mixtral, Phi, etc.)
+
+-   **Développement** : Jusqu'à présent, la principale stratégie employée a simplement consisté à [augmenter la taille des modèles, des données et des infrastructures]{.underline}, sans apporter de changements majeurs au modèle lui-même.
+
+## Limites des LLM
+
+-   **Hallucination et précision** : Ces modèles ont également tendance à [répondre avec beaucoup d'assurance des choses fausses]{.underline} ou [qui n'ont rien à voir avec le sujet]{.underline}. Bien que cela puisse sembler être un bug ou quelque chose d'inattendu, ce n'est en fait pas surprenant : [ces modèles ont été entraînés à prédire le mot suivant, et non à répondre correctement]{.underline}.
+
+    -   Il existe également un [biais de confiance]{.underline}, car lors de la [phase d'annotation humaine]{.underline}, les réponses plus sûres ont tendance à être plus appréciées (biais cognitif).
+
+## Limites des LLM
+
+-   **Sécurité** : Comme les modèles ne sont pas codés à la main avec des règles, [leur comportement ne peut être prédit]{.underline}, d'où la nécessité d'une [validation humaine]{.underline} pour réduire les réponses problématiques (censure). Cependant, il est [impossible de prévoir tous les cas]{.underline} et, très souvent, des personnes trouvent un moyen de détourner les modèles.
+
+    -   Solution: [données de meilleures qualités]{.underline} (garbage-in, garbage-out)
+
+[![](figure/chatgpt_detournement.PNG){fig-align="center"}](https://www.zdnet.fr/actualites/chatgpt-est-deja-detourne-pour-ecrire-des-logiciels-malveillants-39952280.htm)
+
+## Limites des LLM
+
+-   **Mise à jour** : Leurs connaissances sont figées dans le temps après la formation. Il existe cependant des moyens de les mettre à jour en les connectant à Internet ou en basant leurs réponses sur des documents spécifiques (RAG).
+
+[![](figure/rag.png){fig-align="center" width="783"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.linkedin.com%2Fpulse%2Fgenerative-ai-augmented-recovery-generation-rag-its-data-sampaio-oll2f&psig=AOvVaw2dVAa8O8qI33G9qzT973_8&ust=1728769104820000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCNj0poGlh4kDFQAAAAAdAAAAABAE)
+
+## Limites des LLM
+
+**Autres** :
+
+-   Copyright (contenu volé)
+
+-   Manque de mémoire à long terme (basé sur leur "token window")
+
+-   Limites du raisonnement complexe (réglée avec GPT o1?)
+
+-   Manque de représentativité dans les langues
+
+-   Biais culturels
+
+-   Risque de confidentialité (OpenAI stock et utilisent les conversations)
+
+-   Limitation multimodal (réglée avec GPT-4o et o1)
+
+-   ...
+
+# Les LLM sont-ils conscients? Pensent-ils?
+
+## Les LLM sont-ils conscients ?
+
+### Que signifie être conscient ?
+
+-   La conscience fait référence à la capacité d'être **conscient de soi** et **de son environnement**, et d'avoir des **pensées** et des **sentiments**.
+-   Les **LLM** sont des modèles d'apprentissage automatique qui génèrent du texte sur la base de modèles qu'ils ont appris, mais **ont-ils conscience d'eux-mêmes** ?
+
+------------------------------------------------------------------------
+
+## Les LLM peuvent-ils être conscients ?
+
+### La réponse : Non, les LLM ne sont pas conscients
+
+-   Les LLM (comme ChatGPT) ne sont pas conscients d'eux-mêmes ou de leur environnement.
+-   **Ils fonctionnent en prédisant le mot suivant d'une phrase** sur la base de modèles, sans aucune compréhension ou conscience de ce qu'ils disent.
+
+### Pourquoi pas ?
+
+-   **Théorie de l'espace de travail global** (**Global Work Space theorie ou** **GWT**) : Cette théorie de la conscience exige que les systèmes répondent à certains critères, comme la conscience de soi et un **comportement orienté vers un but**. Les LLM ne répondent pas à ces critères.
+-   Les LLM sont très sophistiqués, mais ils restent **de simples outils** pour générer du texte.
+
+------------------------------------------------------------------------
+
+## Les LLM sont-ils intelligents ?
+
+### Définition de l'intelligence
+
+-   L'intelligence fait souvent référence à la **capacité d'apprendre**, **de résoudre des problèmes** et **d'appliquer des connaissances dans de nouvelles situations**.
+-   Les LLM **semblent intelligents** parce qu'ils peuvent **générer des réponses complexes** et **gérer diverses tâches** comme écrire, répondre à des questions ou coder.
+
+------------------------------------------------------------------------
+
+### Les LLM sont-ils vraiment intelligents ?
+
+### La réponse : Les LLM ont une intelligence limitée
+
+-   **Les LLM ne sont pas "intelligents" comme le sont les humains**.
+-   Ils manquent **"d'intelligence générale"**, c'est-à-dire de la capacité d'apprendre et de **s'adapter à différents domaines et tâches**.
+
+### Ce que les LLM peuvent faire :
+
+-   **Performance spécifique à la tâche** : Les LLM excellent dans des [tâches spécifiques]{.underline} telles que la [génération de mots]{.underline}, la [traduction]{.underline} et la [conversation]{.underline}, sur la base de leurs données d'apprentissage.
+-   Cependant, ils échouent souvent lorsqu'ils sont confrontés à des **situations inconnues** ou à des **questions qui ne font pas partie de leurs données d’entraînement**.
+
+------------------------------------------------------------------------
+
+## Ce qui nous trompe : L'effet Kaggle
+
+-   **Kaggle** : une [plateforme en ligne]{.underline} populaire pour les passionnés de [science des données]{.underline} et d'apprentissage automatique.
+-   **Compétitions kaggle** : Il y en a de tous les types et [les modèles qui gagnent sont excellent dans la tâche précise, mais incapable en dehors]{.underline}.
+-   **L'effet Kaggle** fait référence aux IA qui réalisent [d'excellentes performances sur des tâches pour lesquelles ils ont été entraînés]{.underline}, mais qui [rencontrent des difficultés sur des problèmes qui ne relèvent pas de cet entraînement]{.underline}.
+-   Cela crée une **illusion d'intelligence**: les LLM semblent intelligents, mais ils ne peuvent gérer que des tâches et des modèles familiers.
+
+## Ce qui nous trompe: Les mesures de performance
+
+-   **Titre trompeur** (ChatGPT est plus "intelligent" qu'un docteur)
+
+-   **Portée limitée des tests** (simple qu'une IA peut suivre: QCM textuel généralement)
+
+-   **Mémorisation ou compréhension?** Possible surestimation des capacités de raisonnement alors que c'est peut-être de la mémorisation. Il y a une limites dans des scénarios peu familiers car [les questions sont peut-être déjà dans les données d'entraînement]{.underline}.
+
+[![](figure/o1_metrics.PNG){fig-align="center" width="628"}](https://openai.com/index/learning-to-reason-with-llms/)
+
+## Ce qui nous trompe: L'anthropomorphisme
+
+Pour décrire les comportement des llm, on utilise très souvent des terme comme "réfléchir", "raisonner", "penser", "comprendre", "interpréter", etc. qui sont [humanisant]{.underline}.
+
+[![](figure/o1_think.PNG){fig-align="center"}](https://news.google.com/search?q=o1&hl=fr&gl=FR&ceid=FR%3Afr)
+
+------------------------------------------------------------------------
+
+## Qu'est-ce qui manque à l'intelligence des LLM ?
+
+1.  **Généralisation** :
+    -   Les LLM ne peuvent pas [s'adapter à de nouvelles tâches]{.underline} pour lesquelles ils n'ont pas été entraînés.
+    -   Ils n'ont pas la capacité d'apprendre au-delà de leurs données de formation.
+2.  **Raisonnement et logique** :
+    -   Les LLM ne sont toujours pas capables de raisonner sur des problèmes **complexes** ou de manier les **mathématiques** et la **logique** avec précision.
+3.  **Compréhension** :
+    -   Les LLM ne **comprennent pas vraiment le texte qu'ils génèrent** ; ils travaillent en suivant des modèles statistiques, et non en raisonnant ou en comprenant.
+
+# L'engouement exagéré pour l'IA?
+
+## Le cycle de l'engouement pour l'IA
+
+-   L'IA a fait l'objet d'un **battage médiatique** (**Hype**) important, qui a souvent conduit à des attentes exagérées quant à ses capacités.
+-   Bien que les technologies de l'IA, en particulier les large language model (**LLM**), aient fait des progrès impressionnants, les entreprises **exagèrent** souvent leurs performances à des fins de marketing.
+
+### Qu'est-ce que le cycle de l'engouement pour l'IA ? (prédiction)
+
+1.  **Excitation initiale** : Les nouvelles technologies d'IA suscitent un intérêt généralisé.
+2.  **Exagération** : Les entreprises exagèrent les capacités de leurs modèles.
+3.  **Désillusion** : Les gens se rendent compte que la technologie n'est pas à la hauteur de l'engouement qu'elle suscite.
+4.  **Compréhension réaliste** : Les véritables capacités et limites de l'IA deviennent plus claires.
+
+------------------------------------------------------------------------
+
+## Démonstrations trompeuses : Fausses performances de l'IA
+
+### Les entreprises qui exagèrent les capacités de l'IA :
+
+-   **Tesla** : A truqué une **démonstration de voiture à conduite autonome** en 2016, présentant sa technologie comme plus avancée qu'elle ne l'était en réalité.
+-   **Google** : a falsifié sa **démonstration d'IA Google Duplex** en 2018, laissant croire que la technologie était plus autonome qu'elle ne l'était en réalité.
+-   **Amazon** : A prétendu que sa technologie d'IA "Just Walk Out" était **entièrement automatisée par l'IA**, alors qu'elle était en réalité alimentée par des [milliers de travailleurs à distance en Inde]{.underline}.
+-   Et d'autres: Sora (OpenAI), DevinAI, etc.
+
+## Anthropomorphisme : Donner à l'IA des qualités humaines
+
+### Qu'est-ce que l'anthropomorphisme ?
+
+-   L'**anthropomorphisme** consiste à attribuer des **qualités humaines** à des entités non humaines.
+-   Dans le cas de l'IA, les gens ont tendance à la considérer comme [intelligente ou consciente]{.underline}, alors qu'elle ne fait que suivre une programmation complexe.
+
+### L'effet Eliza :
+
+-   **L'effet Eliza** décrit la manière dont les humains sont facilement [trompés]{.underline} en pensant que les systèmes d'IA, comme les chatbots, sont intelligents ou sensibles.
+-   Les **LLM** comme ChatGPT utilisent le langage naturel pour générer du texte, ce qui leur donne l'air de ressembler à des humains.
+
+------------------------------------------------------------------------
+
+## Dark Patterns : L'IA conçue pour tromper
+
+### Que sont les dark patterns ?
+
+-   Les **"dark patterns"** sont des **stratégies de conception** utilisées pour **"influencer les utilisateurs"** (ex. rendre le désabonnement difficile). Dans notre cas, on fait croire que les [systèmes d'IA sont plus intelligents ou plus compétents qu'ils ne le sont]{.underline}.
+-   Par exemple, les interfaces d'IA peuvent utiliser des caractéristiques telles que des **voix synthétiques** ou des **comportements mignons** (comme le rire) pour renforcer l'illusion d'intelligence.
+
+------------------------------------------------------------------------
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/D9byh4MAsUQ?si=fT1q-So1-yIMfOxK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+------------------------------------------------------------------------
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/wfAYBdaGVxs?start=40&amp;si=4vbjZJTeFKi5REMV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+------------------------------------------------------------------------
+
+## AI Boyfriend/Girlfriend
+
+Le phénomène des **"petits amis/petites amies IA"** fait référence à l'utilisation croissante [d'agents conversationnels basés sur l'intelligence artificielle comme compagnons virtuels romantiques]{.underline} ou
+intimes.
+
+[![](figure/chatgpt_boyfriend.PNG){fig-align="center"}](https://news.google.com/search?q=ChatGPT%20boyfriend&hl=en-US&gl=US&ceid=US%3Aen)
+
+## Pourquoi les entreprises exagèrent les capacités de l'IA?
+
+### Incitations financières :
+
+-   Les entreprises ont des **incitations financières** à exagérer les capacités de l'IA. Une démonstration réussie peut conduire à davantage **d'investissements**, à une **augmentation de la valeur des actions** et à **l'attention du public**.
+-   L'exagération conduit à un effet de **"ruée vers l'or"** et de **désinformation**.
+
+### Les conséquences :
+
+-   Les utilisateurs et les entreprises peuvent prendre de **mauvaises décisions** sur la base d'attentes exagérées, qu'il s'agisse de **supprimer des emplois** ou de **confier à l'IA des tâches essentielles ou inutiles** qu'elle n'est pas en mesure d'accomplir correctement.
+
+------------------------------------------------------------------------
+
+## Résumé : Séparer le battage médiatique de la réalité
+
+-   **L'IA est puissante, mais aussi limitée.** Si les LLM peuvent générer des textes impressionnants, ils n'ont pas d'intelligence ni de conscience.
+-   Il est essentiel d'aborder les technologies de l'IA avec une **réflexion critique** et d'être conscient de l'**hypothèse marketing** qui exagère souvent leurs capacités.
+-   L'avenir de l'IA dépend de **attentes réalistes**
+
+------------------------------------------------------------------------
+
+## Introduction : Les risques de l'IA
+
+-   L'IA, bien que puissante et innovante, présente également des risques importants pour la société.
+-   Ces risques concernent **les travailleurs**, **les industries**, **l'éducation** et **la sécurité publique**.
+
+### Principaux risques :
+
+1.  **Exploitation des travailleurs** et mauvaises conditions de travail.
+2.  **Déplacement d'emplois** en raison de l'automatisation de l'IA.
+3.  **Défis en matière d'éducation** et d'adaptation à l'IA.
+4.  **Utilisations néfastes** de l'IA, y compris la désinformation, les escroqueries et le harcèlement.
+
+------------------------------------------------------------------------
+
+## L'exploitation des travailleurs dans le développement de l'IA
+
+Avant qu'un modèle ne soit diffusé, il doit être **réentraîné (par renforcement)** à l'aide d'une **évaluation humaine** afin de réduire les **contenus dangereux**, mais malgré cela, des risques subsistent.
+
+### Le cas des travailleurs kenyans
+
+-   **OpenAI** a employé des **travailleurs kenyans** pour labéliser des **contenus toxiques et nuisibles** pour **moins de 2 dollars de l'heure**.
+-   Ces travailleurs devaient classer des contenus explicites, violents et dérangeants, ce qui était mentalement épuisant.
+-   Alors que les modèles d'IA comme ChatGPT semblent autonomes, une grande partie de leur **développement repose sur des travailleurs sous-payés dans de mauvaises conditions de travail**.
+
+## Le risque de déplacement d'emplois
+
+### L'IA remplace les emplois :
+
+-   **L'automatisation de l'IA a déjà commencé** à remplacer des emplois, en particulier dans des secteurs tels que **le service à la clientèle**, **la traduction** ou **la relecture**.
+-   **British Petrolium** a signalé **une réduction de 70% de sous-traitance de codeurs externes** en raison des capacités de l'IA.
+
+### Quels sont les emplois menacés ?
+
+-   **Rôles administratifs** : L'IA peut effectuer des tâches répétitives telles que la saisie de données, la planification et les demandes de renseignements des clients.
+-   **Emplois créatifs** : L'IA peut désormais générer du contenu, rédiger des articles et même coder, menaçant ainsi les professionnels humains dans ces domaines.
+-   **Travail manuel** : La robotique avancée pilotée par l'IA remplace les emplois dans la fabrication et la logistique.
+
+## L'éducation et l'IA : une épée à double tranchant
+
+### Les écoles doivent s'adapter
+
+-   Les outils d'IA tels que ChatGPT ont permis aux étudiants de **tricher plus facilement** sur les devoirs et les examens.
+-   Les écoles doivent désormais adapter leurs **processus d'apprentissage** aux outils d'IA, en introduisant de nouvelles méthodes d'évaluation et de développement des compétences.
+
+### Impact positif :
+
+-   L'IA peut contribuer à l'**apprentissage personnalisé** en offrant un contenu éducatif sur mesure.
+-   Cependant, elle **remet également en question les systèmes éducatifs traditionnels**, rendant plus difficile la garantie de l'intégrité académique.
+
+------------------------------------------------------------------------
+
+## Utilisations néfastes de l'IA
+
+### Fake News et désinformation
+
+-   L'IA peut être utilisée pour générer des **fake news** et diffuser rapidement des informations erronées.
+-   Les **"deepfakes"**, générés par l'IA, rendent difficile la distinction entre les vrais et les faux médias, ce qui érode encore plus la confiance du public.
+
+### Escroqueries, chantage et harcèlement
+
+-   Les chatbots et les systèmes alimentés par l'IA sont utilisés pour **l'escroquerie** et **le chantage**, en automatisant des schémas frauduleux et en créant de fausses identités.
+-   L'IA peut être exploitée à des fins de **harcèlement en ligne**, notamment en générant du contenu explicite (deepfake) pour harceler ou faire chanter des individus.
+
+---
+
+[![](figure/taylor_swift.PNG)](https://news.google.com/read/CBMixwFBVV95cUxQSldwU3lXaGZwY2lPNEdYWFVGcTVfMVI5MkZzNW85cnFISlI0N3pJUWlhOHZiLVFmSm5CNFdxelBKbE5MZzRuUlNxVVY0dUdzc25iZUEzVmlxeDZUajllQ2JRSzUzM05zMkF3aDlvRnJFVnJEMjNGaGRJcUNCM25QU0w4RTU1M3VHbWNUZl9TT2tlLXdoZEpWMXV4bzk4NTFCYXZiQTBkRXFNc2QxamJFSXVJUDZIdVdPU2p3eVNXNGpFUDJrNlhn?hl=fr&gl=FR&ceid=FR%3Afr){fig-align="center"}
+
+## Préoccupations environnementales
+
+### Consommation d'énergie et émissions de carbone :
+
+-   **Utilisation massive d'énergie** : Les modèles d'IA, en particulier les large language models (LLM), nécessitent une puissance de calcul importante et consomment de grandes quantités d'électricité.
+-   **Empreinte carbone** : La formation de grands modèles d'IA peut émettre des centaines de tonnes de CO2. Par exemple, la formation du GPT-3 d'OpenAI a émis environ **500 tonnes de CO2**​.
+-   **Croissance exponentielle** : À mesure que les modèles d'IA deviennent plus avancés, leurs besoins en énergie doublent environ tous les 3 - 4 mois​.
+
+---
+
+### Eau et déchets électroniques:
+
+-   **Centres de données** : Les modèles d'IA nécessitent un refroidissement important, ce qui entraîne une consommation d'eau considérable.
+-   D'ici 2027, les centres de données liés à l'IA pourraient consommer **quatre fois l'utilisation annuelle d'eau du Danemark** pour le refroidissement​.
+-   La dépendance de l'IA à l'égard du matériel informatique contribue aux **déchets électroniques**, qui peuvent nuire à l'environnement.
+
+[![](figure/environnement.PNG)](https://news.google.com/read/CBMi0wFBVV95cUxNVTFWZHQ2bEJvMDhqRlNGenR6SmdNNlM1cjExOHREYmM1STZjSGp2R0c2QzRKTWxsNkFoSlktekdjbjVLc0pHSUs5MEFiRE5MbEVWOW1iempCWExoRWVLeTJIRGVDbW9YZE9UeWpYUWJIcGVlRkVzLXozajdWNzNyaFJJd0dmNGx4V0FRNVQwM2w4VzNQVUtMVkVvMjdYOXFmdDQ5NlJScXdUa251U3g5MHpHc0E0SFVtbFJXcFRsRDFPX3h4TEpUakFFV01ZYm1fX2dn?hl=fr&gl=FR&ceid=FR%3Afr)
+
+------------------------------------------------------------------------
+
+## L'IA et le monopole des entreprises
+
+### Monopole du pouvoir de l'IA :
+
+-   Le développement de l'IA est **dominé par quelques géants de la technologie** tels que OpenAI, Google, Microsoft et Amazon. **Et Nvidia!**
+    -   Trop cher pour n'importe qui d'autres (infrastructure et énergie)
+-   Ces entreprises contrôlent les **données, les ressources et l'infrastructure** nécessaires au développement de modèles d'IA avancés, ce qui leur confère un contrôle monopolistique.
+-   Ce monopole rend la **concurrence difficile pour les petites entreprises ou les initiatives open-source**, étouffant ainsi l'innovation et la diversité dans ce domaine.
+    -   Ces initiatives existent tout de même grâce au modèle open source de Facebook (Llama)
+    
+---
+
+[![](figure/nvidia_shovel.png){fig-align="center" width="600"}](https://www.google.com/url?sa=i&url=https%3A%2F%2Fanalyticsindiamag.com%2Fai-origins-evolution%2Fnvidia-sells-gpus-not-shovels%2F&psig=AOvVaw0XSt0BMsfWUhD0hwaVSQFL&ust=1728784302931000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCODf2Mndh4kDFQAAAAAdAAAAABAR)
+
+## La bulle financière de l'IA
+
+### Surinvestissement dans l'IA :
+
+-   L'afflux rapide des **investissements dans l'IA** a fait craindre une bulle financière.
+-   Les **institutions financières** investissent massivement dans les technologies de l'IA pour gagner en efficacité, mais il existe des risques.
+
+### Risque de bulle :
+
+-   À l'instar de la **bulle Internet** du début des années 2000, de nombreux projets d'IA sont surestimés et ne s'appuient pas sur des modèles commerciaux réels et durables.
+-   Les **gains à court terme** de l'IA pourraient conduire à un effondrement si la technologie ne donne pas les résultats escomptés, ce qui aurait un impact sur les **marchés financiers** et les économies.
+
+## Le risque de l'AGI et de la superintelligence
+
+### Qu'est-ce que l'AGI ?
+
+-   L'intelligence artificielle générale (**Artificial General Intelligence** ou **AGI**) désigne les systèmes d'IA capables d'effectuer toutes les tâches intellectuelles d'un être humain.
+-   L'AGI surpasserait les capacités actuelles de l'IA, ce qui pourrait conduire à des systèmes dotés d'une **intelligence de type humain, voire d'une superintelligence**.
+
+### Dangers potentiels :
+
+-   **perte de contrôle humain** : L'IAG pourrait devenir incontrôlable ou agir à l'encontre des intérêts humains, en prenant des décisions préjudiciables à la société.
+-   **Risque existentiel** : Une AGI qui donne la priorité à des objectifs non alignés sur les valeurs humaines pourrait constituer une menace pour la **survie humaine**.
+
+---
+
+[![Extinction?](figure/geoffrey_hinton_2.PNG)](https://news.google.com/read/CBMiygFBVV95cUxNQkRSU2dibVBjRFFfbkZOUlllMnRhR1BEbjJ0Q1BSUEN0LTBuVGJDdlg0eDVZaWl6aGdibWwwVk5seXVTazJmeWJXQVVscU4tcHJ3N1cxZ25oc0s2VWEyRGpNNUdqQm5fRm94X29SNVc1el9YNFhxUHA4OGdDTEd2eU1UcjFKOF9GYmlaXzNPSXF3bG9LZk54Y20xQV9KOVVld2QtYmNKZUx0bThyck9wVTRaUV92WlN6S1VSeFhSOWQwdWo4Y2tWVzR3?hl=fr&gl=FR&ceid=FR%3Afr)
+
+## La question sous-jacente : Le rythme des investissements dans l'IA
+
+### Une croissance incontrôlée :
+
+-   Le **rapide rythme des investissements** dans l'IA, motivé par le profit et la concurrence, néglige souvent les questions cruciales de sécurité, d'éthique et d'environnement.
+-   Il serait probablement nécessaire de **ralentir** et d'évaluer les risques potentiels avant de pousser plus loin les avancées technologiques.
+    -   Plus d'accent sur la sécurité
+    -   Nécessité de prendre en compte le contexte (utilisation malveillante ou impacts sociétaux)
+
+# Alternatives à ChatGPT
+
+## Introduction : Pourquoi explorer les alternatives à ChatGPT?
+
+-   Bien que **ChatGPT** soit un modèle d'IA populaire, plusieurs autres alternatives offrent des caractéristiques et des améliorations uniques. De plus, les problèmes suivant doivent être mentionnés:
+    -   **Confidentialité** : Stocke les conversations et les utilise pour former le modèle.
+    -   **Utilisation** : Généraliste, ne convient pas à toutes les utilisations
+    -   **Droit d'auteur** : a volé de nombreux contenus en ligne
+
+## 1) Copilot (anciennement Bing AI)
+
+<https://www.bing.com/chat>
+
+1.  **Information en temps réel** : Contrairement à ChatGPT, Copilot est connecté à Internet, fournissant des données à jour et des événements actuels.
+2.  **Intégration de la recherche sur le web** : Copilot peut effectuer des recherches sur le web et résumer les résultats.
+3.  **Génération d'images** : Alimenté par **DALL-E**, il peut générer des images à partir d'invites textuelles.
+4.  **Traitement des données visuelles** : Les utilisateurs peuvent télécharger des images et recevoir des informations ou des analyses à leur sujet.
+
+## 2) Gemini
+
+<https://gemini.google.com/app>
+
+1.  **Capacités multimodales** : Gemini gère le texte, les images, l'audio et la vidéo​.
+2.  **Meilleures performances** : Surpasse le GPT-4 dans les tests de référence liés à la compréhension et au raisonnement linguistiques multitâches.
+3.  **Capacités de codage avancées** : Excelle dans les tâches liées au code, fournissant des résultats plus précis.
+
+## 3) Claude
+
+<https://claude.ai/login?returnTo=%2F%3F>
+
+1.  **Fenêtre contextuelle plus longue** : Claude peut mémoriser et traiter des conversations beaucoup plus longues (jusqu'à 100 000 mots)​.
+2.  **Forme formation éthique** : Conçu pour gérer les problèmes éthiques et refuser les demandes inappropriées.
+3.  **Persistance à la tâche** : Meilleure capacité à suivre des instructions complexes en plusieurs étapes.
+
+[**Il faut un compte**]{style="color: red;"}
+
+## 4) Perplexity AI
+
+<https://www.perplexity.ai/>
+
+1.  **Information en temps réel** : Fournit des données en temps réel en effectuant des recherches sur le web.
+2.  **Multiples modèles** : Utilise GPT-4, Claude 3 et Gemini Pro, ce qui permet aux utilisateurs de sélectionner différents modèles pour diverses tâches.
+3.  **Citations de sources** : Fournit des citations pour toutes ses informations, améliorant ainsi la transparence.
+
+## Huggingface space
+
+<https://huggingface.co/spaces>
+
+1.  **Déploiement facile** : Permet aux utilisateurs de créer et de partager rapidement des démos d'IA.
+2.  **Intégration** : Accès direct à l'écosystème du modèle Hugging Face.
+3.  **Collaboration** : Offre des outils de contrôle de version et de collaboration pour les équipes.
+
+## LMStudio :
+
+<https://lmstudio.ai/>
+
+-   **Exécution locale de modèles** : Permet aux utilisateurs d'exécuter des modèles d'IA localement sans dépendre de services en ligne.
+-   **Convivialité** : Fournit une interface graphique pour la gestion des modèles.
+-   **Confidentialité** : Toutes les données sont conservées au niveau local, ce qui garantit une sécurité et une confidentialité accrues.
+
+## Ollama :
+
+<https://ollama.com/>
+
+-   **Exécution locale de modèles** : Permet aux utilisateurs d'exécuter des modèles d'IA localement sans dépendre de services en ligne.
+-   **Confidentialité** : Toutes les données sont conservées au niveau local, ce qui garantit une sécurité et une confidentialité accrues.
+-   **Interface de ligne de commande** : Fournit un outil simple et léger pour exécuter des modèles localement​.
+-   **Personnalisation** : Permet aux utilisateurs de créer et de modifier des modèles personnalisés pour des besoins spécifiques.
+
+## Résumé : choisir la bonne alternative
+
+-   **Copilot** excelle dans l'information en temps réel et l'intégration web.
+-   **Gemini** offre de solides capacités multimodales et une expertise en matière de codage.
+-   **Claude** offre des considérations éthiques et une mémoire plus longue.
+-   **Perplexité** associe des informations en temps réel à des citations de sources.
+-   **Hugging Face Spaces**, **LMStudio**, et **Ollama** offrent des solutions d'IA flexibles et locales pour les utilisateurs soucieux de leur vie privée.
+
+------------------------------------------------------------------------
+
+# Merci pour votre attention !
